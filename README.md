@@ -19,8 +19,7 @@ Incentivar o comércio e eventos locais a se promoverem digitalmente
 Proporcionar recomendações personalizadas
 Criar uma rede de avaliações e feedbacks reais dos usuários
 
-👥 Perfis de Usuários
-
+👥 Perfis de Usuários  
 🛍 Cliente
 Procura lugares e experiências
 Faz avaliações e comentários
@@ -53,38 +52,37 @@ JUnit 5 - Testes automatizados
 JWT - Tokens de autenticação
 Bean Validation - Validação de dados
 
-✅ Funcionalidades Principais
-Autenticação e Cadastro
-RF001: Login com distinção de perfil (cliente, dono de negócio, beneficente)
-RF002: Cadastro de clientes com validação de CPF e email
-RF021: Sistema de redefinição de senha
-RF041: Cadastro de organizações beneficentes com validação de CNPJ
-Busca e Descoberta
-Busca por locais com filtros de proximidade, categorias e palavras-chave
-Geolocalização para mostrar locais próximos
-Recomendações baseadas no histórico de uso
-Interação Social
+✅ Funcionalidades Principais  
+Autenticação e Cadastro  
+RF001: Login com distinção de perfil (cliente, dono de negócio, beneficente)  
+RF002: Cadastro de clientes com validação de CPF e email  
+RF021: Sistema de redefinição de senha  
+RF041: Cadastro de organizações beneficentes com validação de CNPJ  
+Busca e Descoberta  
+Busca por locais com filtros de proximidade, categorias e palavras-chave  
+Geolocalização para mostrar locais próximos  
+Recomendações baseadas no histórico de uso  
+Interação Social  
 
-📦 Instalação
-Pré-requisitos
-Java 17 ou superior
-Maven 3.6+
-PostgreSQL 12+
-IDE (IntelliJ IDEA, Eclipse, VS Code)
-Configuração
-Clone o repositório:
-bash
-git clone https://github.com/christiankraich/backend-voce-conhece.git
-cd backend-voce-conhece
-Configure o banco de dados:
-bash
+📦 Instalação  
+Pré-requisitos  
+Java 17 ou superior  
+Maven 3.6+  
+PostgreSQL 12+  
+IDE (IntelliJ IDEA, Eclipse, VS Code)  
+Configuração  
+Clone o repositório:  
+bash  
+git clone https://github.com/christiankraich/backend-voce-conhece.git  
+cd backend-voce-conhece  
+Configure o banco de dados:  
+bash  
 
 # PostgreSQL  
-CREATE DATABASE voce_conhece;
+CREATE DATABASE voce_conhece;  
+Configure as variáveis de ambiente em application.yml:  
 
-Configure as variáveis de ambiente em application.yml:
-
-yaml
+```yaml
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/voce_conhece
@@ -94,7 +92,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
+  
 jwt:
   secret: ${JWT_SECRET:seu-jwt-secret-aqui}
   expiration: 86400000
@@ -102,43 +100,44 @@ jwt:
 app:
   upload:
     path: ${UPLOAD_PATH:./uploads}
+```
     
-Execute o projeto:
-bash
-# Com Maven
-mvn spring-boot:run
+Execute o projeto:  
+bash  
+# Com Maven  
+mvn spring-boot:run  
 
-# Ou compile e execute
-mvn clean package
-java -jar target/backend-voce-conhece-1.0.0.jar
-Execute os testes:
-bash
-mvn test
-🧪 Testes Implementados
-Autenticação (AutenticadorServiceTest)
+# Ou compile e execute  
+mvn clean package  
+java -jar target/backend-voce-conhece-1.0.0.jar  
+Execute os testes:  
+bash  
+mvn test  
 
-✅ Autenticar diferentes perfis de usuário
-✅ Validar senhas incorretas
-✅ Rejeitar usuários inexistentes
-✅ Validar campos obrigatórios
-✅ Validar formato de email
+🧪 Testes Implementados  
+Autenticação (AutenticadorServiceTest)  
+✅ Autenticar diferentes perfis de usuário  
+✅ Validar senhas incorretas  
+✅ Rejeitar usuários inexistentes  
+✅ Validar campos obrigatórios  
+✅ Validar formato de email  
 
-Cadastro de Cliente (CadastroClienteServiceTest)
-✅ Cadastro completo válido
-✅ Validação de campos obrigatórios
-✅ Validação de email e CPF únicos
-✅ Validação de formatos (email, CPF)
+Cadastro de Cliente (CadastroClienteServiceTest)  
+✅ Cadastro completo válido  
+✅ Validação de campos obrigatórios  
+✅ Validação de email e CPF únicos  
+✅ Validação de formatos (email, CPF)  
 
-Cadastro de Beneficente (CadastroBeneficenteServiceTest)
-✅ Cadastro completo com CNPJ válido
-✅ Validação de campos obrigatórios
-✅ Validação de CNPJ único e formato
-✅ Validação de tipo de organização
+Cadastro de Beneficente (CadastroBeneficenteServiceTest)  
+✅ Cadastro completo com CNPJ válido  
+✅ Validação de campos obrigatórios  
+✅ Validação de CNPJ único e formato  
+✅ Validação de tipo de organização  
 
-Redefinição de Senha (RedefinirSenhaServiceTest)
-✅ Verificação de email existente
-✅ Validação de nova senha
-✅ Prevenção de reutilização de senha
-✅ Validação de força da senha
+Redefinição de Senha (RedefinirSenhaServiceTest)  
+✅ Verificação de email existente  
+✅ Validação de nova senha  
+✅ Prevenção de reutilização de senha  
+✅ Validação de força da senha  
 
 ⭐ Transformando a forma como as pessoas descobrem sua cidade!
