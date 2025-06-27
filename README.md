@@ -1,4 +1,4 @@
-# backend-voce-conhece
+# testes-backend-voce-conhece
 
 Backend Você Conhece?
 API backend para plataforma de descoberta de locais e experiências urbanas.
@@ -18,22 +18,27 @@ Ajudar pessoas a encontrarem novas experiências locais
 Incentivar o comércio e eventos locais a se promoverem digitalmente
 Proporcionar recomendações personalizadas
 Criar uma rede de avaliações e feedbacks reais dos usuários
+
 👥 Perfis de Usuários
+
 🛍 Cliente
 Procura lugares e experiências
 Faz avaliações e comentários
 Salva favoritos
 Ganha pontos por interações
 Troca pontos por cupons de desconto
+
 🏪 Dono de Negócio
 Registra e promove seu local/evento
 Escolhe entre planos Bronze, Prata ou Ouro
 Acessa relatórios de desempenho
 Gerencia promoções e campanhas
+
 💎 Beneficente
 Organizações beneficentes cadastradas
 Participam do sistema de doações via pontos
 Validação através de CNPJ e registro governamental
+
 🔧 Administrador
 Gerencia e mantém o sistema
 Aprova cadastros de estabelecimentos
@@ -47,6 +52,7 @@ PostgreSQL - Banco de dados
 JUnit 5 - Testes automatizados
 JWT - Tokens de autenticação
 Bean Validation - Validação de dados
+
 ✅ Funcionalidades Principais
 Autenticação e Cadastro
 RF001: Login com distinção de perfil (cliente, dono de negócio, beneficente)
@@ -75,7 +81,9 @@ bash
 
 # PostgreSQL  
 CREATE DATABASE voce_conhece;
+
 Configure as variáveis de ambiente em application.yml:
+
 yaml
 spring:
   datasource:
@@ -94,6 +102,7 @@ jwt:
 app:
   upload:
     path: ${UPLOAD_PATH:./uploads}
+    
 Execute o projeto:
 bash
 # Com Maven
@@ -107,21 +116,25 @@ bash
 mvn test
 🧪 Testes Implementados
 Autenticação (AutenticadorServiceTest)
+
 ✅ Autenticar diferentes perfis de usuário
 ✅ Validar senhas incorretas
 ✅ Rejeitar usuários inexistentes
 ✅ Validar campos obrigatórios
 ✅ Validar formato de email
+
 Cadastro de Cliente (CadastroClienteServiceTest)
 ✅ Cadastro completo válido
 ✅ Validação de campos obrigatórios
 ✅ Validação de email e CPF únicos
 ✅ Validação de formatos (email, CPF)
+
 Cadastro de Beneficente (CadastroBeneficenteServiceTest)
 ✅ Cadastro completo com CNPJ válido
 ✅ Validação de campos obrigatórios
 ✅ Validação de CNPJ único e formato
 ✅ Validação de tipo de organização
+
 Redefinição de Senha (RedefinirSenhaServiceTest)
 ✅ Verificação de email existente
 ✅ Validação de nova senha
